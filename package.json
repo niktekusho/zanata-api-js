@@ -1,18 +1,18 @@
 {
   "name": "zanata-api-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core APIs for Zanata REST Interface using Node.js",
   "main": "dist/",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-		"lint": "npm run tslint",
-		"prepublish": "npm run build && npm run lint",
+    "lint": "npm run tslint",
+    "prepublish": "npm run build && npm run lint",
     "prestart": "npm run build",
     "start": "node dist/index.js",
-		"test": "npm run build && npm run lint",
-		"tslint": "tslint -c tslint.json -p tsconfig.json"
+    "test": "npm run build && npm run lint",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
     "node-fetch": "^2.1.2"
