@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
+		"lint": "tslint -c tslint.json -p tsconfig.json",
+		"prepublish": "npm run build && npm run lint",
     "prestart": "npm run build",
     "start": "node dist/index.js",
 		"test": "npm run build && npm run lint"
