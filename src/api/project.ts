@@ -1,5 +1,5 @@
 import * as fetch from "node-fetch";
-import { projectsEndpoint } from "../listprojects";
+import { projectsEndpoint } from "./projects";
 import { ZanataProject } from "ZanataProject";
 import { ZanataIni } from "ZanataIni";
 
