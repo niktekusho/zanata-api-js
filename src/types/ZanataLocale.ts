@@ -1,5 +1,5 @@
 export type ZanataLocale = {
-    readonly localeId: string,
-    readonly displayName: string,
-    readonly alias: string,
+	readonly localeId: string,
+	readonly displayName: string,
+	readonly alias: string,
 };

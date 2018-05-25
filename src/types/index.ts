@@ -8,14 +8,14 @@ import { ZanataStatus } from "./ZanataStatus";
 import { ZanataTranslation, ZanataTranslationResponse, ZanataTranslator } from "./ZanataTranslation";
 
 export {
-    ZanataDocument,
-    ZanataIni,
-    ZanataIteration,
-    ZanataLink,
-    ZanataLocale,
-    ZanataProject,
-    ZanataStatus,
-    ZanataTranslation,
-    ZanataTranslationResponse,
-    ZanataTranslator,
+	ZanataDocument,
+	ZanataIni,
+	ZanataIteration,
+	ZanataLink,
+	ZanataLocale,
+	ZanataProject,
+	ZanataStatus,
+	ZanataTranslation,
+	ZanataTranslationResponse,
+	ZanataTranslator,
 };

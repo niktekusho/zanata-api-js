@@ -5,9 +5,9 @@ import * as project from "./project";
 import * as projects from "./projects";
 
 export {
-    auth,
-    document,
-    iteration,
-    project,
-    projects,
+	auth,
+	document,
+	iteration,
+	project,
+	projects,
 };

@@ -1,5 +1,5 @@
 export type ZanataIni = {
-    url: string,
-    username: string,
-    apiKey: string,
+	url: string,
+	username: string,
+	apiKey: string,
 };

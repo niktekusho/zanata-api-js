@@ -10,7 +10,7 @@ import { commonHeader } from "./auth";
  * @param projectID ID of the Project Resource to manipulate
  */
 export function projectEndpoint(serverUrl: string, projectID: string): string {
-    return `${projectsEndpoint(serverUrl)}/p/${projectID}`;
+	return `${projectsEndpoint(serverUrl)}/p/${projectID}`;
 }
 
 /**
@@ -23,9 +23,9 @@ export function projectEndpoint(serverUrl: string, projectID: string): string {
  * @param projectID ID of the Project Resource to fetch
  */
 export async function get(serverUrl: string, projectID: string): Promise<ZanataProject> {
-    const url = projectEndpoint(serverUrl, projectID);
-    const headers = commonHeader();
-    return fetch.default(url, { headers }).then(response => response.json());
+	const url = projectEndpoint(serverUrl, projectID);
+	const headers = commonHeader();
+	return fetch.default(url, { headers }).then(response => response.json());
 }
 
 /**
@@ -43,11 +43,11 @@ export async function get(serverUrl: string, projectID: string): Promise<ZanataP
  * @param newProject Details of the Project to update/create
  */
 export async function put(serverUrl: string, projectID: string, authHeaders: fetch.Headers, newProject: ZanataProject): Promise<fetch.Response> {
-    const url = projectEndpoint(serverUrl, projectID);
-    const requestOpts: fetch.RequestInit = {
-        headers: authHeaders,
-        method: "PUT",
-        body: JSON.stringify(newProject),
-    };
-    return fetch.default(url, requestOpts);
+	const url = projectEndpoint(serverUrl, projectID);
+	const requestOpts: fetch.RequestInit = {
+		headers: authHeaders,
+		method: "PUT",
+		body: JSON.stringify(newProject),
+	};
+	return fetch.default(url, requestOpts);
 }

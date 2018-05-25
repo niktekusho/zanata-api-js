@@ -6,43 +6,43 @@ import { ZanataTranslation, ZanataTranslationResponse } from "../types/ZanataTra
 import { commonHeader } from "./auth";
 
 export type DocRequest = {
-    readonly projectID: string,
-    readonly iterationID: string,
-    readonly documentID: string,
+	readonly projectID: string,
+	readonly iterationID: string,
+	readonly documentID: string,
 };
 
 export function documentEndpoint(serverUrl: string, docRequest: DocRequest): string {
-    return `${projectEndpoint(serverUrl, docRequest.projectID)}/iterations/i/${docRequest.iterationID}/r/${docRequest.documentID}`;
+	return `${projectEndpoint(serverUrl, docRequest.projectID)}/iterations/i/${docRequest.iterationID}/r/${docRequest.documentID}`;
 }
 
 export async function get(serverUrl: string, docRequest: DocRequest): Promise<ZanataDocument> {
-    const url = documentEndpoint(serverUrl, docRequest);
-    const header = commonHeader();
-    return fetch.default(url, { headers: header }).then(response => response.json());
+	const url = documentEndpoint(serverUrl, docRequest);
+	const header = commonHeader();
+	return fetch.default(url, { headers: header }).then(response => response.json());
 }
 
 export async function getDocumentTranslation(serverUrl: string, docRequest: DocRequest, translationLanguage: string): Promise<ZanataTranslationResponse> {
-    const url = `${documentEndpoint(serverUrl, docRequest)}/translations/${translationLanguage}`;
-    const headers = commonHeader();
-    return fetch.default(url, { headers }).then(response => response.json());
+	const url = `${documentEndpoint(serverUrl, docRequest)}/translations/${translationLanguage}`;
+	const headers = commonHeader();
+	return fetch.default(url, { headers }).then(response => response.json());
 }
 
 export async function putSourceDocument(serverUrl: string, docRequest: DocRequest, newDocument: ZanataDocument, authHeaders: fetch.Headers): Promise<fetch.Response> {
-    const url = documentEndpoint(serverUrl, docRequest);
-    const requestOpts: fetch.RequestInit = {
-        headers: authHeaders,
-        method: "PUT",
-        body: JSON.stringify(newDocument),
-    };
-    return fetch.default(url, requestOpts);
+	const url = documentEndpoint(serverUrl, docRequest);
+	const requestOpts: fetch.RequestInit = {
+		headers: authHeaders,
+		method: "PUT",
+		body: JSON.stringify(newDocument),
+	};
+	return fetch.default(url, requestOpts);
 }
 
 export async function putTranslations(serverUrl: string, docRequest: DocRequest, translations: ZanataTranslation[], authHeaders: fetch.Headers): Promise<fetch.Response> {
-    const url = documentEndpoint(serverUrl, docRequest);
-    const requestOpts: fetch.RequestInit = {
-        headers: authHeaders,
-        method: "PUT",
-        body: JSON.stringify({ textFlowTargets: translations}),
-    };
-    return fetch.default(url, requestOpts);
+	const url = documentEndpoint(serverUrl, docRequest);
+	const requestOpts: fetch.RequestInit = {
+		headers: authHeaders,
+		method: "PUT",
+		body: JSON.stringify({ textFlowTargets: translations}),
+	};
+	return fetch.default(url, requestOpts);
 }

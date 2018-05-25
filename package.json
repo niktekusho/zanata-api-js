@@ -7,11 +7,12 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-		"lint": "tslint -c tslint.json -p tsconfig.json",
+		"lint": "npm run tslint",
 		"prepublish": "npm run build && npm run lint",
     "prestart": "npm run build",
     "start": "node dist/index.js",
-		"test": "npm run build && npm run lint"
+		"test": "npm run build && npm run lint",
+		"tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
     "node-fetch": "^2.1.2"
