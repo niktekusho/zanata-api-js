@@ -1,6 +1,7 @@
 import * as fetch from "node-fetch";
 import { resifyUrl } from "./util";
-import { ZanataProject } from "ZanataProject";
+import { ZanataProject } from "../types/ZanataProject";
+import { commonHeader } from "./auth";
 
 export function projectsEndpoint(serverUrl: string): string {
     return `${resifyUrl(serverUrl)}/projects`;
@@ -8,5 +9,6 @@ export function projectsEndpoint(serverUrl: string): string {
 
 export async function get(serverUrl: string): Promise<ZanataProject[]> {
     const url = projectsEndpoint(serverUrl);
-    return fetch.default(url).then(response => response.json());
+    const headers = commonHeader();
+    return fetch.default(url, { headers }).then(response => response.json());
 }

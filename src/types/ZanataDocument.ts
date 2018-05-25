@@ -1,4 +1,4 @@
-import { ZanataSourceText } from "ZanataSourceText";
+import { ZanataSourceText } from "./ZanataSourceText";
 
 export type ZanataDocument = {
     readonly name: string,

@@ -1,7 +1,7 @@
 import { Headers } from "node-fetch";
-import { ZanataIni } from "ZanataIni";
+import { ZanataIni } from "../types/ZanataIni";
 
-function commonHeader(): Headers {
+export function commonHeader(): Headers {
     const header = new Headers();
     header.append("Accept", "application/json");
     return header;

@@ -1,6 +1,6 @@
-import { ZanataLink } from "ZanataProjectLink";
-import { ZanataStatus } from "ZanataProjectStatus";
-import { ZanataIteration } from "ZanataIteration";
+import { ZanataLink } from "./ZanataLink";
+import { ZanataStatus } from "./ZanataStatus";
+import { ZanataIteration } from "./ZanataIteration";
 
 export type ZanataProject = {
     readonly id: string,

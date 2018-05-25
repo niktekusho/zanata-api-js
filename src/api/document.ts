@@ -1,8 +1,9 @@
 import * as fetch from "node-fetch";
 import { projectEndpoint } from "./project";
-import { ZanataSourceText } from "ZanataSourceText";
-import { ZanataDocument } from "ZanataDocument";
-import { ZanataTranslation } from "ZanataTranslation";
+import { ZanataSourceText } from "../types/ZanataSourceText";
+import { ZanataDocument } from "../types/ZanataDocument";
+import { ZanataTranslation, ZanataTranslationResponse } from "../types/ZanataTranslation";
+import { commonHeader } from "./auth";
 
 export type DocRequest = {
     readonly projectID: string,
@@ -16,12 +17,14 @@ export function documentEndpoint(serverUrl: string, docRequest: DocRequest): str
 
 export async function get(serverUrl: string, docRequest: DocRequest): Promise<ZanataDocument> {
     const url = documentEndpoint(serverUrl, docRequest);
-    return fetch.default(url).then(response => response.json());
+    const header = commonHeader();
+    return fetch.default(url, { headers: header }).then(response => response.json());
 }
 
-export async function getDocumentTranslation(serverUrl: string, docRequest: DocRequest, translationLanguage: string): Promise<ZanataTranslation[]> {
+export async function getDocumentTranslation(serverUrl: string, docRequest: DocRequest, translationLanguage: string): Promise<ZanataTranslationResponse> {
     const url = `${documentEndpoint(serverUrl, docRequest)}/translations/${translationLanguage}`;
-    return fetch.default(url).then(response => response.json());
+    const headers = commonHeader();
+    return fetch.default(url, { headers }).then(response => response.json());
 }
 
 export async function putSourceDocument(serverUrl: string, docRequest: DocRequest, newDocument: ZanataDocument, authHeaders: fetch.Headers): Promise<fetch.Response> {

@@ -2,7 +2,8 @@
   "name": "zanata-api-js",
   "version": "1.0.0",
   "description": "Core APIs for Zanata REST Interface using Node.js",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "build": "tsc",

@@ -1,7 +1,8 @@
 import * as fetch from "node-fetch";
 import { projectsEndpoint } from "./projects";
-import { ZanataProject } from "ZanataProject";
-import { ZanataIni } from "ZanataIni";
+import { ZanataProject } from "../types/ZanataProject";
+import { ZanataIni } from "../types/ZanataIni";
+import { commonHeader } from "./auth";
 
 /**
  * Returns the endpoint for a single Zanata Project resource
@@ -23,7 +24,8 @@ export function projectEndpoint(serverUrl: string, projectID: string): string {
  */
 export async function get(serverUrl: string, projectID: string): Promise<ZanataProject> {
     const url = projectEndpoint(serverUrl, projectID);
-    return fetch.default(url).then(response => response.json());
+    const headers = commonHeader();
+    return fetch.default(url, { headers }).then(response => response.json());
 }
 
 /**
