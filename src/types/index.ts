@@ -5,7 +5,7 @@ import { ZanataLocale } from "./ZanataLocale";
 import { ZanataProject } from "./ZanataProject";
 import { ZanataLink } from "./ZanataLink";
 import { ZanataStatus } from "./ZanataStatus";
-import { ZanataTranslation, ZanataTranslationResponse, ZanataTranslator } from "./ZanataTranslation";
+import { ZanataTranslation, ZanataTranslationResponse, ZanataTranslator, ZanataTranslationState } from "./ZanataTranslation";
 
 export {
 	ZanataDocument,

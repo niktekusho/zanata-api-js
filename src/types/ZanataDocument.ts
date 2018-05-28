@@ -6,6 +6,6 @@ export type ZanataDocument = {
 	readonly lang: string,
 	readonly type: string,
 	readonly revision: number,
-	readonly extensions?: string,
+	readonly extensions?: string[],
 	readonly textFlows?: ZanataSourceText[],
 };

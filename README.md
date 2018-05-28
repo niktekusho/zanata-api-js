@@ -201,7 +201,7 @@ try {
 
 ## Document Translation[PUT]
 
-Overwrite 
+Upload the document translations.
 
 ### Usage
 
@@ -216,9 +216,17 @@ const reqObject: api.document.DocRequest = {
 	documentID: "example.properties"
 };
 
+const sampleZanataAuth: types.ZanataIni = {
+    apiKey: "the api key Zanata provides you (Login in Zanata -> Settings -> Client -> Generate a new API Key)",
+    url: "you could also leave this as blank string in this case",
+    username: "self explanatory I think..."
+};
+
+const headers = api.auth.authHeader(sampleZanataAuth);
+
 // in an async function...
 try {
-	const translationsResonse: types.ZanataTranslationResponse = await api.document.getDocumentTranslation(serverUrl, 		reqObject, language);
+	const response = await api.document.putTranslations(serverUrl, reqObject, language);
 	const translations = translationsResonse.textFlowTargets;
 } catch(error) {
 	// Properly handle error
