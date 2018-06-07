@@ -29,7 +29,7 @@ export async function getDocumentTranslation(serverUrl: string, docRequest: DocR
 
 export async function putSourceDocument(serverUrl: string, docRequest: DocRequest, newDocument: ZanataDocument, authHeaders: fetch.Headers): Promise<fetch.Response> {
 	const url = documentEndpoint(serverUrl, docRequest);
-	console.log(JSON.stringify(newDocument));
+	// console.log(JSON.stringify(newDocument));
 	const requestOpts: fetch.RequestInit = {
 		headers: authHeaders,
 		method: "PUT",
@@ -40,7 +40,7 @@ export async function putSourceDocument(serverUrl: string, docRequest: DocReques
 
 export async function putTranslations(serverUrl: string, docRequest: DocRequest, translations: ZanataTranslation[], authHeaders: fetch.Headers, lang: string): Promise<fetch.Response> {
 	const url = `${documentEndpoint(serverUrl, docRequest)}/translations/${lang}`;
-	console.log(JSON.stringify({ textFlowTargets: translations }));
+	// console.log(JSON.stringify({ textFlowTargets: translations }));
 	const requestOpts: fetch.RequestInit = {
 		headers: authHeaders,
 		method: "PUT",
