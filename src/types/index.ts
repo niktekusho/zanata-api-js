@@ -6,6 +6,7 @@ import { ZanataProject } from "./ZanataProject";
 import { ZanataLink } from "./ZanataLink";
 import { ZanataStatus } from "./ZanataStatus";
 import { ZanataTranslation, ZanataTranslationResponse, ZanataTranslator, ZanataTranslationState } from "./ZanataTranslation";
+import { ZanataSourceText } from "./ZanataSourceText";
 
 export {
 	ZanataDocument,
@@ -14,6 +15,7 @@ export {
 	ZanataLink,
 	ZanataLocale,
 	ZanataProject,
+	ZanataSourceText,
 	ZanataStatus,
 	ZanataTranslation,
 	ZanataTranslationResponse,
