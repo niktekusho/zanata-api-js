@@ -1,8 +1,8 @@
 export type ZanataTranslation = {
 	readonly resId: string,
-	readonly state: string,
+	readonly state: ZanataTranslationState,
 	readonly translator?: ZanataTranslator,
-	readonly content: ZanataTranslationState,
+	readonly content: string,
 	readonly extensions: string[], // TODO
 	readonly revision: number,
 	readonly textFlowRevision: number,
