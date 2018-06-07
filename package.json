@@ -1,6 +1,6 @@
 {
   "name": "zanata-api-js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Core APIs for Zanata REST Interface using Node.js",
   "main": "dist/",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
     "build": "tsc",
     "jest": "jest",
     "lint": "npm run tslint",
-    "prepublish": "npm run build && npm run lint",
+    "prepublish": "npm run test",
     "prestart": "npm run build",
     "start": "node dist/index.js",
     "test": "npm run build && npm run lint && npm run jest",
