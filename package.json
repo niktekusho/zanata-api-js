@@ -7,19 +7,23 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "jest": "jest",
     "lint": "npm run tslint",
     "prepublish": "npm run build && npm run lint",
     "prestart": "npm run build",
     "start": "node dist/index.js",
-    "test": "npm run build && npm run lint",
+    "test": "npm run build && npm run lint && npm run jest",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
     "node-fetch": "^2.1.2"
   },
   "devDependencies": {
+    "@types/jest": "^23.0.0",
     "@types/node": "^10.1.2",
     "@types/node-fetch": "^1.6.9",
+    "jest": "^23.1.0",
+    "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
     "typescript": "^2.8.3"
   }

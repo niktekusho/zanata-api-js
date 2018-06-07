@@ -1,12 +1,12 @@
 import * as fetch from "node-fetch";
-import { resifyUrl } from "./util";
+import { restifyUrl } from "./util";
 import { ZanataIteration } from "../types/ZanataIteration";
 import { ZanataDocument } from "../types/ZanataDocument";
 import { ZanataLocale } from "../types/ZanataLocale";
 import { commonHeader } from "./auth";
 
 export function iterationEndpoint(serverUrl: string, projectID: string, iterationID: string): string {
-	return `${resifyUrl(serverUrl)}/project/${projectID}/version/${iterationID}`;
+	return `${restifyUrl(serverUrl)}/project/${projectID}/version/${iterationID}`;
 }
 
 export async function get(serverUrl: string, projectID: string, iterationID: string): Promise<ZanataIteration> {
