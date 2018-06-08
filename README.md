@@ -175,19 +175,19 @@ const reqObject: api.document.DocRequest = {
 };
 
 const sampleZanataAuth: types.ZanataIni = {
-    apiKey: "the api key Zanata provides you (Login in Zanata -> Settings -> Client -> Generate a new API Key)",
-    url: "you could also leave this as blank string in this case",
-    username: "self explanatory I think..."
+	apiKey: "the api key Zanata provides you (Login in Zanata -> Settings -> Client -> Generate a new API Key)",
+	url: "you could also leave this as blank string in this case",
+	username: "self explanatory I think..."
 };
 
 const headers = api.auth.authHeader(sampleZanataAuth);
 
 const newDocument: types.ZanataDocument = {
-    contentType: "text/plain",
-    lang: "it",
+	contentType: "text/plain",
+	lang: "it",
 	name: "newdoc",
-    revision: 1,
-    type: "FILE"
+	revision: 1,
+	type: "FILE"
 };
 
 // in an async function...
@@ -217,17 +217,28 @@ const reqObject: api.document.DocRequest = {
 };
 
 const sampleZanataAuth: types.ZanataIni = {
-    apiKey: "the api key Zanata provides you (Login in Zanata -> Settings -> Client -> Generate a new API Key)",
-    url: "you could also leave this as blank string in this case",
-    username: "self explanatory I think..."
+	apiKey: "the api key Zanata provides you (Login in Zanata -> Settings -> Client -> Generate a new API Key)",
+	url: "you could also leave this as blank string in this case",
+	username: "self explanatory I think..."
 };
 
 const headers = api.auth.authHeader(sampleZanataAuth);
 
+const newTranslations: types.ZanataTranslation[] = [
+	{
+    	content: 'test',
+        extensions: [],
+        resId: 'test',
+        revision: 0,
+        state: ZanataTranslationState.NeedReview,
+        textFlowRevision: 0
+	}
+];
+
 // in an async function...
 try {
-	const response = await api.document.putTranslations(serverUrl, reqObject, language);
-	const translations = translationsResonse.textFlowTargets;
+	const response = await api.document.putTranslations(serverUrl, reqObject, [/* translations here */], language);
+	// response body may contain warnings
 } catch(error) {
 	// Properly handle error
 }
