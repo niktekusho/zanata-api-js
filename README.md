@@ -237,7 +237,7 @@ const newTranslations: types.ZanataTranslation[] = [
 
 // in an async function...
 try {
-	const response = await api.document.putTranslations(serverUrl, reqObject, [/* translations here */], language);
+	const response = await api.document.putTranslations(serverUrl, reqObject, newTranslations, headers, language);
 	// response body may contain warnings
 } catch(error) {
 	// Properly handle error
