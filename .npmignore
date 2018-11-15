@@ -1,9 +1,18 @@
+### Directories
+coverage/
+.nyc_output/
 node_modules/
 src/
+
+# IDE
 .vscode/
-.nyc_output/
-coverage/
-npm-debug.log
+
+### Files
+
+# CI/Build tools
 .editorconfig
-yarn.lock
-README.md
+.travis.yml
+npm-debug.log
+jest.config.js
+tsconfig.json
+tslint.json
