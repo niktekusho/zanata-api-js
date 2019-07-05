@@ -8,23 +8,24 @@
   "scripts": {
     "build": "tsc",
     "jest": "jest",
-    "lint": "npm run tslint",
-    "prepublish": "npm run test",
-    "prestart": "npm run build",
+    "lint": "yarpm run tslint",
+    "prepublish": "yarpm run test",
+    "prestart": "yarpm run build",
     "start": "node dist/index.js",
-    "test": "npm run build && npm run lint && npm run jest",
+    "test": "yarpm run build && yarpm run lint && yarpm run jest",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "dependencies": {
-    "node-fetch": "^2.1.2"
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@types/jest": "^23.0.0",
-    "@types/node": "^10.1.2",
-    "@types/node-fetch": "^1.6.9",
-    "jest": "^23.1.0",
-    "ts-jest": "^22.4.6",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.3"
+    "@types/jest": "24.0.15",
+    "@types/node": "^10.14.12",
+    "@types/node-fetch": "^2.3.7",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2",
+    "yarpm": "^0.2.1"
   }
 }
